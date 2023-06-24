@@ -52,9 +52,10 @@
                     <TextBox Width="120"
                              x:Name="t2"
                              Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>
+
                     <Label
                         Foreground="White"
-                        Content="{Binding ElementName=wMain,Path=Request}"
+                        Content="{Binding ElementName=wMain,Path=i,Mode=OneWay}"
                         />
                 </StackPanel>
 
@@ -64,19 +65,14 @@
                     Foreground="NavajoWhite"
                     x:Name="lblResult"
                     >
-
                     <Label.Style>
                         <Style TargetType="Label">
                             <Style.Triggers>
                                 <MultiDataTrigger>
                                     <MultiDataTrigger.Conditions>
-
-                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}"
-                                                   Value="True" />
-
-                                        <Condition Binding="{Binding ElementName=wMain,Path=Request}"
-                                                   Value="True" />
-
+                                        <Condition Binding="{Binding ElementName=wMain,
+                                                   Path=Request}"
+                                                   Value="False" />
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Content" Value="{Binding ElementName=txtMain
                                             ,Path=Text, Converter={StaticResource EnglishPersian}}"/>

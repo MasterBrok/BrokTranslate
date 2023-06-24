@@ -27,28 +27,13 @@ namespace BrokTranslate
     /// </summary>
     public partial class MainWindow : Window
     {
-        DispatcherTimer timer = new DispatcherTimer();
+        
         public MainWindow()
         {
             InitializeComponent();
-            timer.Interval = new TimeSpan(1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
+           
         }
-
-        private void Timer_Tick(object? sender, EventArgs e)
-        {
-            var value = timer.Interval - time;
-            if (value.Seconds > 4)
-            {
-                isRequest = true;
-            }
-            else
-                isRequest = false;
-        }
-
-        public TimeSpan time;
-        private bool isRequest = false;
+        private bool isRequest;
 
         public bool Request
         {
@@ -64,7 +49,7 @@ namespace BrokTranslate
 
         private void txtMain_TextChanged(object sender, TextChangedEventArgs e)
         {
-            time = DateTime.Now.TimeOfDay;
+          
         }
 
     }
