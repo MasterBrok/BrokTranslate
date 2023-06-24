@@ -16,6 +16,7 @@
         Width="800"
         Background="Transparent"
         AllowsTransparency="True"
+        x:Name="wMain"
         >
     <Border
         CornerRadius="20"
@@ -39,6 +40,7 @@
                     Content="Language"
                     />
                 <cc:ccTextBox
+                    TextChanged="txtMain_TextChanged"
                     x:Name="txtMain"
                     />
 
@@ -50,6 +52,10 @@
                     <TextBox Width="120"
                              x:Name="t2"
                              Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>
+                    <Label
+                        Foreground="White"
+                        Content="{Binding ElementName=wMain,Path=Request}"
+                        />
                 </StackPanel>
 
 
@@ -64,8 +70,13 @@
                             <Style.Triggers>
                                 <MultiDataTrigger>
                                     <MultiDataTrigger.Conditions>
+
                                         <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}"
                                                    Value="True" />
+
+                                        <Condition Binding="{Binding ElementName=wMain,Path=Request}"
+                                                   Value="True" />
+
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Content" Value="{Binding ElementName=txtMain
                                             ,Path=Text, Converter={StaticResource EnglishPersian}}"/>

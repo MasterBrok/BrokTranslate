@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Printing;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Threading;
@@ -18,10 +20,11 @@ namespace BrokTranslate.Convertor
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
+            if (!string.IsNullOrEmpty(value.ToString()))
             {
                 var translate = new MyTranslate(value.ToString(), ThisToType, ThisFromType);
-                return translate.LanguagesTranslate();  
+
+                return translate.LanguagesTranslate();
             }
             return "null";
         }
