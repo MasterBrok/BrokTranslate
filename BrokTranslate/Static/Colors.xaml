@@ -1,17 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--Start For Border Main-->
-    <SolidColorBrush x:Key="backgroundMain" Color="#1b1725"/>
-    <SolidColorBrush x:Key="borderBrushMain" Color="#453e53"/>
+    <SolidColorBrush x:Key="backgroundMain" Color="#e9ecef"/>
+    <SolidColorBrush x:Key="borderBrushMain" Color="#dee2e6"/>
     <!--End For Border Main-->
 
     <!--Start For TextBox-->
-    <SolidColorBrush x:Key="foregroundTextBox" Color="#baabc4"/>
-    <SolidColorBrush x:Key="backgroundTextBox" Color="#262131"/>
-    <SolidColorBrush x:Key="borderBrushTextBox" Color="#a499b3"/>
+    <SolidColorBrush x:Key="foregroundTextBox" Color="#343a40"/>
+    <SolidColorBrush x:Key="backgroundTextBox" Color="#ced4da"/>
+    <SolidColorBrush x:Key="borderBrushTextBox" Color="#6c757d"/>
     <!--End For TextBox-->
 
-
+    <!--Start For Label-->
+    <SolidColorBrush x:Key="foregroundLabel" Color="#343a40"/>
+    <SolidColorBrush x:Key="backgroundLabel" Color="#ced4da"/>
+    <SolidColorBrush x:Key="borderBrushLaebl" Color="#6c757d"/>
+    <!--End For Label-->
 
 
 

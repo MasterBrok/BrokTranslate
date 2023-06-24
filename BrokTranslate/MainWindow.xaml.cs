@@ -47,10 +47,5 @@ namespace BrokTranslate
                 DragMove();
         }
 
-        private void txtMain_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
     }
 }

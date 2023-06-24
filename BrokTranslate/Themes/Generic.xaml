@@ -6,11 +6,9 @@
 
     <Style TargetType="{x:Type local:ccTextBox}">
         <Setter Property="Focusable" Value="True"/>
-        <Setter Property="Width" Value="150"/>
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Margin" Value="2"/>
-        <Setter Property="Padding" Value="2"/>
-        <Setter Property="FontFamily" Value="Inconsolata"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="FontFamily" Value="Cascadia Mono"/>
         <Setter Property="Foreground" Value="{DynamicResource foregroundTextBox}"/>
         <Setter Property="Background" Value="{DynamicResource backgroundTextBox}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource borderBrushTextBox}"/>
@@ -18,7 +16,7 @@
         <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ccTextBox}">
@@ -37,4 +35,37 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type local:ccLabel}">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="FontFamily" Value="Cascadia Mono"/>
+        <Setter Property="Foreground" Value="{DynamicResource foregroundLabel}"/>
+        <Setter Property="Background" Value="{DynamicResource backgroundLabel}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource borderBrushLaebl}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ccLabel}">
+                    <Border CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            >
+                        <ContentPresenter Margin="{TemplateBinding Padding}" Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+
+
+
 </ResourceDictionary>

@@ -12,8 +12,8 @@
         MouseDown="Window_MouseDown"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Height="450"
-        Width="800"
+        Height="600"
+        Width="500"
         Background="Transparent"
         AllowsTransparency="True"
         x:Name="wMain"
@@ -24,59 +24,60 @@
         BorderBrush="{StaticResource borderBrushMain}"
         Background="{StaticResource backgroundMain}"
         >
-        <Grid >
+        <Grid>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Button Width="30" Height="30"/>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.Resources>
+                        <co:IConvertTranslate x:Key="EnglishPersian"
+                                              x:Name="EF"
+                                              ThisToType="English"
+                                              ThisFromType="Persian"/>
+                    </Grid.Resources>
 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-            <StackPanel>
-                <StackPanel.Resources>
-                    <co:IConvertTranslate x:Key="EnglishPersian"
-                                          x:Name="EF"
-                                          ThisToType="English"
-                                          ThisFromType="Persian"/>
-                </StackPanel.Resources>
+                    <cc:ccTextBox
+                        Grid.Column="0"
+                        />
 
-                <cc:ccTextBox
-                    TextChanged="txtMain_TextChanged"
-                    x:Name="txtMain"
-                    />
+                    <cc:ccLabel
+                        Grid.Column="1"
+                        Content="Hi"
+                        />
+                    <!--<StackPanel>
+                    -->
+                    <!--<TextBox Width="120"
+                    x:Name="t1"
+                    Text="{Binding Source={StaticResource EnglishPersian},Path=ThisToType}"/>
+                    <TextBox Width="120"
+                    x:Name="t2"
+                    Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>-->
+                    <!--
 
-
-                <!--<StackPanel>
-                --><!--<TextBox Width="120"
-                x:Name="t1"
-                Text="{Binding Source={StaticResource EnglishPersian},Path=ThisToType}"/>
-                <TextBox Width="120"
-                x:Name="t2"
-                Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>--><!--
-
-                </StackPanel>-->
-
-                <Label
-                    Foreground="NavajoWhite"
-                    x:Name="lblResult"
+                    </StackPanel>-->
+                </Grid>
+                <Border
+                    Grid.Row="2"
+                    Background="#6c757d"
+                    CornerRadius="0 0 15 15"
+                    Margin="5"
                     >
-                    <Label.Style>
-                        <Style TargetType="Label">
-                            <Style.Triggers>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding ElementName=wMain,
-                                                   Path=Request}"
-                                                   Value="True" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Content" Value="{Binding ElementName=txtMain
-                                            ,Path=Text, Converter={StaticResource EnglishPersian}}"/>
-                                </MultiDataTrigger>
-
-                            </Style.Triggers>
-                        </Style>
-                    </Label.Style>
-                </Label>
-            </StackPanel>
 
 
-
-
+                </Border>
+            </Grid>
+            <Button Width="40" Height="40"/>
         </Grid>
     </Border>
 </Window>
