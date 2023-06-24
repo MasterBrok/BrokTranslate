@@ -27,14 +27,14 @@ namespace BrokTranslate
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
-           
-        }
-        private bool isRequest;
 
+        }
+
+        private bool isRequest;
         public bool Request
         {
             get { return isRequest; }
@@ -49,7 +49,7 @@ namespace BrokTranslate
 
         private void txtMain_TextChanged(object sender, TextChangedEventArgs e)
         {
-          
+
         }
 
     }

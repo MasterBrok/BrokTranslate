@@ -29,37 +29,27 @@
 
             <StackPanel>
                 <StackPanel.Resources>
-                    <co:TranslateEnglishToFarsi x:Key="EnglishPersian"
-                                                x:Name="EF"
-                                                ThisToType="English"
-                                                ThisFromType="Persian"/>
+                    <co:IConvertTranslate x:Key="EnglishPersian"
+                                          x:Name="EF"
+                                          ThisToType="English"
+                                          ThisFromType="Persian"/>
                 </StackPanel.Resources>
-                <CheckBox
-                    x:Name="chLan"
-                    Foreground="White"
-                    Content="Language"
-                    />
+
                 <cc:ccTextBox
                     TextChanged="txtMain_TextChanged"
                     x:Name="txtMain"
                     />
 
 
-                <StackPanel>
-                    <TextBox Width="120"
-                             x:Name="t1"
-                             Text="{Binding Source={StaticResource EnglishPersian},Path=ThisToType}"/>
-                    <TextBox Width="120"
-                             x:Name="t2"
-                             Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>
+                <!--<StackPanel>
+                --><!--<TextBox Width="120"
+                x:Name="t1"
+                Text="{Binding Source={StaticResource EnglishPersian},Path=ThisToType}"/>
+                <TextBox Width="120"
+                x:Name="t2"
+                Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>--><!--
 
-                    <Label
-                        Foreground="White"
-                        Content="{Binding ElementName=wMain,Path=i,Mode=OneWay}"
-                        />
-                </StackPanel>
-
-
+                </StackPanel>-->
 
                 <Label
                     Foreground="NavajoWhite"
@@ -72,7 +62,7 @@
                                     <MultiDataTrigger.Conditions>
                                         <Condition Binding="{Binding ElementName=wMain,
                                                    Path=Request}"
-                                                   Value="False" />
+                                                   Value="True" />
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Content" Value="{Binding ElementName=txtMain
                                             ,Path=Text, Converter={StaticResource EnglishPersian}}"/>
