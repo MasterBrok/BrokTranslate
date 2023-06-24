@@ -23,7 +23,8 @@
                 <ControlTemplate TargetType="{x:Type local:ccTextBox}">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
                         <ScrollViewer
                             x:Name="PART_ContentHost"
                             Focusable="False"
