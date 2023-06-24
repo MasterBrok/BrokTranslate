@@ -10,19 +10,18 @@ namespace BrokTranslate.Convertor
 {
     public class TranslateEnglishToFarsi : IValueConverter
     {
+        public string ToType { get; set; }
+        public string FromType { get; set; }
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
             {
-                Api.TranslatSetting translat = new Api.TranslatSetting();
-                translat.Content = value.ToString();
-                translat.FromLanguage = Api.LanguagesType.Persian;
-                translat.ToLanguage = Api.LanguagesType.English;
-                Api.GoogleApi api = new Api.GoogleApi();
-                return api.Translate(translat);
+                Class.Translate translate = new Class.Translate(value.ToString(), ToType, FromType);
+                return translate.LanguagesTranslate();
             }
             return "Not Found";
         }
+
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

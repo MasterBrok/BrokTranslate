@@ -43,14 +43,16 @@
                             <Style.Triggers>
                                 <MultiDataTrigger>
                                     <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}" Value="True" />
+                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}"
+                                                   Value="True" />
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Content" Value="{Binding ElementName=txtMain
                                             ,Path=Text, Converter={StaticResource EF}}"/>
                                 </MultiDataTrigger>
                                 <MultiDataTrigger>
                                     <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}" Value="False" />
+                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}"
+                                                   Value="False" />
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Content" Value="{Binding ElementName=txtMain
                                             ,Path=Text, Converter={StaticResource FE}}"/>
