@@ -26,9 +26,10 @@
         <Grid >
 
 
-            <StackPanel >
+            <StackPanel>
                 <StackPanel.Resources>
                     <co:TranslateEnglishToFarsi x:Key="EnglishPersian"
+                                                x:Name="EF"
                                                 ThisToType="English"
                                                 ThisFromType="Persian"/>
                 </StackPanel.Resources>
@@ -40,6 +41,19 @@
                 <cc:ccTextBox
                     x:Name="txtMain"
                     />
+
+
+                <StackPanel>
+                    <TextBox Width="120"
+                             x:Name="t1"
+                             Text="{Binding Source={StaticResource EnglishPersian},Path=ThisToType}"/>
+                    <TextBox Width="120"
+                             x:Name="t2"
+                             Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>
+                </StackPanel>
+
+
+
                 <Label
                     Foreground="NavajoWhite"
                     x:Name="lblResult"

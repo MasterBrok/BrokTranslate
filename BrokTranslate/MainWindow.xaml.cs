@@ -26,18 +26,12 @@ namespace BrokTranslate
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new Translate();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
-        }
-
-        private void txtMain_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -17,7 +17,7 @@ namespace BrokTranslate.Convertor
         {
             if (value != null)
             {
-                Translate translate = new Translate(value.ToString(),ToType,FromType);
+                MyTranslate translate = new MyTranslate(value.ToString(),ToType,FromType);
                 return translate.LanguagesTranslate();
             }
             return "Not Found";

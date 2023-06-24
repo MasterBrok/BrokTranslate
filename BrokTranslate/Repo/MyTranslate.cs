@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace BrokTranslate.Repo
 {
-    class Translate
+    class MyTranslate
     {
         private GoogleApi Api { get; set; }
         private TranslatSetting TranslatSetting { get; set; }
         public string ToType { get; set; }
         public string FromType { get; set; }
         public string Content { get; set; }
-        public Translate()
+        public MyTranslate()
         {
             TranslatSetting = new TranslatSetting();
             Api = new GoogleApi();
         }
 
-        public Translate(string content, string toType, string fromType)
+        public MyTranslate(string content, string toType, string fromType)
         {
             ToType = toType;
             FromType = fromType;
@@ -29,14 +29,17 @@ namespace BrokTranslate.Repo
             Api = new GoogleApi();
         }
 
-        public string LanguagesTranslate()
+        private void TranslatSettings()
         {
             TranslatSetting.Content = Content;
             TranslatSetting.ToLanguage = (LanguagesType)Enum.Parse(typeof(LanguagesType), ToType);
             TranslatSetting.FromLanguage = (LanguagesType)Enum.Parse(typeof(LanguagesType), FromType);
+        }
+        public string LanguagesTranslate()
+        {
+            TranslatSettings();
             return Api.Translate(TranslatSetting);
         }
-
-
+    
     }
 }
