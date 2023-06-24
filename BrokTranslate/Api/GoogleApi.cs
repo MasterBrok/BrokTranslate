@@ -183,7 +183,7 @@ namespace BrokTranslate.Api
 
     }
 
-
+     
     /// <summary>
     /// This class is used to store and send the translator settings parameter, where Content is the string to be translated
     ///FromLanguage is for source language and ToLanguage is for destination language

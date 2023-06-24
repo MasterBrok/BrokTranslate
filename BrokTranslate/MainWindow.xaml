@@ -22,11 +22,44 @@
         BorderBrush="{StaticResource borderBrushMain}"
         Background="{StaticResource backgroundMain}"
         >
-        <Grid>
+        <Grid >
 
-
-
-
+            <StackPanel>
+                <CheckBox
+                    x:Name="chLan"
+                    Foreground="White"
+                    Content="Language"
+                    />
+                <cc:ccTextBox
+                    TextChanged="txtMain_TextChanged"
+                    x:Name="txtMain"
+                    />
+                <Label
+                    Foreground="NavajoWhite"
+                    x:Name="lblResult"
+                    >
+                    <Label.Style>
+                        <Style TargetType="Label">
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}" Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Content" Value="{Binding ElementName=txtMain
+                                            ,Path=Text, Converter={StaticResource EF}}"/>
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Content" Value="{Binding ElementName=txtMain
+                                            ,Path=Text, Converter={StaticResource FE}}"/>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Label.Style>
+                </Label>
+            </StackPanel>
 
 
 
