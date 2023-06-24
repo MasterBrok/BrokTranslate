@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BrokTranslate.Api;
+using BrokTranslate.Repo;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,13 +12,13 @@ namespace BrokTranslate.Convertor
 {
     public class TranslateEnglishToFarsi : IValueConverter
     {
-        public string ToType { get; set; }
-        public string FromType { get; set; }
+        public string ThisToType { get; set; }
+        public string ThisFromType { get; set; }
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
             {
-                Class.Translate translate = new Class.Translate(value.ToString(), ToType, FromType);
+                Translate translate = new Translate(value.ToString(), ThisToType, ThisFromType);
                 return translate.LanguagesTranslate();
             }
             return "Not Found";

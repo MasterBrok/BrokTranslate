@@ -2,12 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:BrokTranslate"
-             xmlns:co="clr-namespace:BrokTranslate.Convertor"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <co:TranslateEnglishToFarsi x:Key="EF"/>
-            <co:TranslateFarsiToEnglish x:Key="FE"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Static/Colors.xaml"/>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrokTranslate.Repo;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace BrokTranslate.Convertor
         {
             if (value != null)
             {
-                Class.Translate translate = new Class.Translate(value.ToString(),ToType,FromType);
+                Translate translate = new Translate(value.ToString(),ToType,FromType);
                 return translate.LanguagesTranslate();
             }
             return "Not Found";

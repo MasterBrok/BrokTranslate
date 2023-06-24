@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrokTranslate"
         xmlns:cc="clr-namespace:BrokTranslate.Controls"
+        xmlns:co="clr-namespace:BrokTranslate.Convertor"
+        xmlns:mm="clr-namespace:BrokTranslate.Repo"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         MouseDown="Window_MouseDown"
@@ -15,7 +17,6 @@
         Background="Transparent"
         AllowsTransparency="True"
         >
-
     <Border
         CornerRadius="20"
         BorderThickness="2"
@@ -24,20 +25,26 @@
         >
         <Grid >
 
-            <StackPanel>
+
+            <StackPanel >
+                <StackPanel.Resources>
+                    <co:TranslateEnglishToFarsi x:Key="EnglishPersian"
+                                                ThisToType="English"
+                                                ThisFromType="Persian"/>
+                </StackPanel.Resources>
                 <CheckBox
                     x:Name="chLan"
                     Foreground="White"
                     Content="Language"
                     />
                 <cc:ccTextBox
-                    TextChanged="txtMain_TextChanged"
                     x:Name="txtMain"
                     />
                 <Label
                     Foreground="NavajoWhite"
                     x:Name="lblResult"
                     >
+
                     <Label.Style>
                         <Style TargetType="Label">
                             <Style.Triggers>
@@ -47,16 +54,9 @@
                                                    Value="True" />
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Content" Value="{Binding ElementName=txtMain
-                                            ,Path=Text, Converter={StaticResource EF}}"/>
+                                            ,Path=Text, Converter={StaticResource EnglishPersian}}"/>
                                 </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding ElementName=chLan,Path=IsChecked}"
-                                                   Value="False" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Content" Value="{Binding ElementName=txtMain
-                                            ,Path=Text, Converter={StaticResource FE}}"/>
-                                </MultiDataTrigger>
+
                             </Style.Triggers>
                         </Style>
                     </Label.Style>

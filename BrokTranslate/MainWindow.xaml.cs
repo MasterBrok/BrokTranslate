@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrokTranslate.Repo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -25,6 +26,7 @@ namespace BrokTranslate
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new Translate();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
