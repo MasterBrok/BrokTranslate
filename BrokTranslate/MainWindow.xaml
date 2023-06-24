@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrokTranslate"
+        xmlns:cc="clr-namespace:BrokTranslate.Controls"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         MouseDown="Window_MouseDown"
@@ -21,6 +22,8 @@
         BorderBrush="{StaticResource borderBrushMain}"
         Background="{StaticResource backgroundMain}"
         >
-
+        <Grid>
+            <cc:ccTextBox />
+        </Grid>
     </Border>
 </Window>

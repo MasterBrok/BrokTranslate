@@ -1,5 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="borderBrushMain" Color="#453e53"/>
+    <!--Start For Border Main-->
     <SolidColorBrush x:Key="backgroundMain" Color="#1b1725"/>
+    <SolidColorBrush x:Key="borderBrushMain" Color="#453e53"/>
+    <!--End For Border Main-->
+
+    <!--Start For TextBox-->
+    <SolidColorBrush x:Key="foregroundTextBox" Color="#baabc4"/>
+    <SolidColorBrush x:Key="backgroundTextBox" Color="#262131"/>
+    <SolidColorBrush x:Key="borderBrushTextBox" Color="#a499b3"/>
+    <!--End For TextBox-->
+
+
+
+
+
+
+
+
 </ResourceDictionary>
