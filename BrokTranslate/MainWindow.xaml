@@ -25,6 +25,12 @@
         Background="{StaticResource backgroundMain}"
         >
         <Grid>
+            <Grid.Resources>
+                <co:IConvertTranslate x:Key="TranslateLan"
+                                      x:Name="EF"
+                                      ThisToType="English"
+                                      ThisFromType="Persian"/>
+            </Grid.Resources>
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -41,13 +47,6 @@
                         />
                 </StackPanel>
                 <Grid Grid.Row="1">
-                    <Grid.Resources>
-                        <co:IConvertTranslate x:Key="TranslateValue"
-                                              x:Name="EF"
-                                              ThisToType="English"
-                                              ThisFromType="Persian"/>
-                    </Grid.Resources>
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -57,26 +56,26 @@
                         x:Name="txtTranslate"
                         Grid.Column="0"
                         />
-
-
-                    <Label
+                    <cc:ccLabel
+                        x:Name="lblResult"
                         Grid.Column="1"
-                        Content="{Binding ElementName=txtValue,
-                        Path=Text,
-                        Converter={StaticResource TranslateValue}}"
-                        />
-
-                    <!--<StackPanel>
-                    `            -->
-                    <!--<TextBox Width="120"
-                    x:Name="t1"
-                    Text="{Binding Source={StaticResource EnglishPersian},Path=ThisToType}"/>
-                    <TextBox Width="120"
-                    x:Name="t2"
-                    Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>-->
-                    <!--
-                    </StackPanel>-->
-
+                        >
+                        <cc:ccLabel.Style>
+                            <Style TargetType="cc:ccLabel">
+                                <Style.Triggers>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition
+                                                Binding="{Binding ElementName=btnTranslate,
+                                                Path=IsMouseOver}"
+                                                Value="True"/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Content" Value="{Binding ElementName=txtTranslate,Path=Text,Converter={StaticResource TranslateLan}}"/>
+                                    </MultiDataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </cc:ccLabel.Style>
+                    </cc:ccLabel>
                 </Grid>
 
                 <Border
@@ -92,14 +91,17 @@
                     Grid.Row="2"
                     >
                     <cc:ccButton
+                        x:Name="btnTranslate"
                         CornerRadius="20"
-                        />
+                        >
+                    </cc:ccButton>
                 </Grid>
             </Grid>
             <cc:ccButton
                 PathGeometry="{StaticResource pdChange}"
                 CornerRadius="20"
-                />
+                >
+            </cc:ccButton>
         </Grid>
     </Border>
 </Window>
