@@ -36,7 +36,7 @@
                 </StackPanel>
                 <Grid Grid.Row="1">
                     <Grid.Resources>
-                        <co:IConvertTranslate x:Key="EnglishPersian"
+                        <co:IConvertTranslate x:Key="TranslateValue"
                                               x:Name="EF"
                                               ThisToType="English"
                                               ThisFromType="Persian"/>
@@ -48,15 +48,20 @@
                     </Grid.ColumnDefinitions>
 
                     <cc:ccTextBox
+                        x:Name="txtValue"
                         Grid.Column="0"
                         />
 
-                    <cc:ccLabel
+
+                    <Label
                         Grid.Column="1"
-                        Content="Hi"
+                        Content="{Binding ElementName=txtValue,
+                        Path=Text,
+                        Converter={StaticResource TranslateValue}}"
                         />
+
                     <!--<StackPanel>
-                    -->
+                    `            -->
                     <!--<TextBox Width="120"
                     x:Name="t1"
                     Text="{Binding Source={StaticResource EnglishPersian},Path=ThisToType}"/>
@@ -64,20 +69,30 @@
                     x:Name="t2"
                     Text="{Binding Source={StaticResource EnglishPersian},Path=ThisFromType}"/>-->
                     <!--
-
                     </StackPanel>-->
+
                 </Grid>
+
                 <Border
                     Grid.Row="2"
+                    Height="60"
+                    VerticalAlignment="Bottom"
                     Background="#6c757d"
                     CornerRadius="0 0 15 15"
                     Margin="5"
                     >
-
-
                 </Border>
+                <Grid
+                    Grid.Row="2"
+                    >
+                    <cc:ccButton
+                        CornerRadius="20"
+                        />
+                </Grid>
             </Grid>
-            <Button Width="40" Height="40"/>
+            <cc:ccButton
+                CornerRadius="20"
+                />
         </Grid>
     </Border>
 </Window>

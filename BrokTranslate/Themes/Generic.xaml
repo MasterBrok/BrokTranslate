@@ -61,11 +61,61 @@
         </Setter>
     </Style>
 
-
-
-
-
-
-
-
+    <Style TargetType="{x:Type local:ccButton}">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="0 0 0 30"/>
+        <Setter Property="Background" Value="{DynamicResource backgroundButton}"/>
+        <Setter Property="Foreground" Value="{DynamicResource foregroundButton}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource  borderbrushButton}"/>
+        <Setter Property="FontFamily" Value="Cascadia Mono"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ccButton}">
+                    <ControlTemplate.Resources>
+                        <Color x:Key="BackgroundisMouseOverFalse">#526D82</Color>
+                        <Color x:Key="BackgroundisMouseOverTrue">#9DB2BF</Color>
+                    </ControlTemplate.Resources>
+                    <Border
+                        x:Name="brdMain"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Duration="0:0:0:2"
+                                            Storyboard.TargetName="brdMain"
+                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                            To="{StaticResource BackgroundisMouseOverTrue}"
+                                            />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Duration="0:0:0:2"
+                                            Storyboard.TargetName="brdMain"
+                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                            To="{StaticResource BackgroundisMouseOverFalse}"
+                                            />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

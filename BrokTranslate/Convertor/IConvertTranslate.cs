@@ -17,7 +17,6 @@ namespace BrokTranslate.Convertor
     {
         public string ThisToType { get; set; }
         public string ThisFromType { get; set; }
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!string.IsNullOrEmpty(value.ToString()))

@@ -17,7 +17,11 @@
     <SolidColorBrush x:Key="borderBrushLaebl" Color="#6c757d"/>
     <!--End For Label-->
 
-
+    <!--Start For Button-->
+    <SolidColorBrush x:Key="foregroundButton" Color="#DDE6ED"/>
+    <SolidColorBrush x:Key="backgroundButton" Color="#526D82"/>
+    <SolidColorBrush x:Key="borderbrushButton"/>
+    <!--End For Button-->
 
 
 
