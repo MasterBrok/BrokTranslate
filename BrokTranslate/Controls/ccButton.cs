@@ -61,5 +61,23 @@ namespace BrokTranslate.Controls
         // Using a DependencyProperty as the backing store for CornerRadius.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(ccButton), new PropertyMetadata(default));
+
+
+
+        public PathGeometry PathGeometry
+        {
+            get { return (PathGeometry)GetValue(PathGeometryProperty); }
+            set { SetValue(PathGeometryProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PathGeometry.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PathGeometryProperty =
+            DependencyProperty.Register("PathGeometry", typeof(PathGeometry), typeof(ccButton), new PropertyMetadata(default));
+
+
+
+
+
+
     }
 }

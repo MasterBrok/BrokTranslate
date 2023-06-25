@@ -31,8 +31,14 @@
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Orientation="Horizontal">
-                    <Button Width="30" Height="30"/>
+                <StackPanel Grid.Row="0">
+                    <cc:ccButton
+                        Margin="6"
+                        HorizontalAlignment="Right"
+                        CornerRadius="5"
+                        Height="20"
+                        Width="20"
+                        />
                 </StackPanel>
                 <Grid Grid.Row="1">
                     <Grid.Resources>
@@ -48,7 +54,7 @@
                     </Grid.ColumnDefinitions>
 
                     <cc:ccTextBox
-                        x:Name="txtValue"
+                        x:Name="txtTranslate"
                         Grid.Column="0"
                         />
 
@@ -91,6 +97,7 @@
                 </Grid>
             </Grid>
             <cc:ccButton
+                PathGeometry="{StaticResource pdChange}"
                 CornerRadius="20"
                 />
         </Grid>

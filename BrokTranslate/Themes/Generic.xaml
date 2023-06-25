@@ -77,6 +77,9 @@
                     <ControlTemplate.Resources>
                         <Color x:Key="BackgroundisMouseOverFalse">#526D82</Color>
                         <Color x:Key="BackgroundisMouseOverTrue">#9DB2BF</Color>
+
+                        <Color x:Key="fillPathIsMouseOverTrue">#DDE6ED</Color>
+
                     </ControlTemplate.Resources>
                     <Border
                         x:Name="brdMain"
@@ -84,7 +87,17 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{TemplateBinding CornerRadius}">
-                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                            <Path
+                                x:Name="ppMain"
+                                Data="{TemplateBinding PathGeometry}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Width="40" Height="40"
+                                Margin="5"
+                                Stretch="Uniform" Stroke="{DynamicResource fillPath}" />
+                        </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">

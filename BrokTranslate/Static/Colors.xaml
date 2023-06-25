@@ -23,7 +23,9 @@
     <SolidColorBrush x:Key="borderbrushButton"/>
     <!--End For Button-->
 
-
+    <!--Start For Path-->
+    <SolidColorBrush x:Key="fillPath" Color="#DDE6ED"/>
+    <!--End For Path-->
 
 
 </ResourceDictionary>
