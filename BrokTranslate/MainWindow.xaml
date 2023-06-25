@@ -31,36 +31,36 @@
                                       ThisToType="English"
                                       ThisFromType="Persian"/>
             </Grid.Resources>
-            <StackPanel
-                Orientation="Horizontal"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                >
 
-                <Label
-                    x:Name="lblFromType"
-                    Content="{Binding Source={StaticResource TranslateLan},Path=ThisFromType,Mode=TwoWay}" />
-
-                <Label
-                    x:Name="lblToType"
-                    Content="{Binding Source={StaticResource TranslateLan},Path=ThisToType,Mode=TwoWay}" />
-
-            </StackPanel>
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0">
+                <WrapPanel  Grid.Row="0">
                     <cc:ccButton
                         Margin="6"
-                        HorizontalAlignment="Right"
                         CornerRadius="5"
                         Height="20"
-                        Width="20" Click="ccButton_Click"
+                        Width="20"
+                        Click="ccButton_Click"
                         />
-                </StackPanel>
+                    <StackPanel Margin="135 0 0 0"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                >
+                        <cc:ccLabel
+                            x:Name="lblFromType"
+                            Content="{Binding Source={StaticResource TranslateLan},Path=ThisFromType,Mode=TwoWay}" />
+
+                        <cc:ccLabel
+                            x:Name="lblToType"
+                            Content="{Binding Source={StaticResource TranslateLan},Path=ThisToType,Mode=TwoWay}" />
+
+                    </StackPanel>
+                </WrapPanel>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

@@ -45,7 +45,7 @@ namespace BrokTranslate.Controls
     ///     <MyNamespace:ccButton/>
     ///
     /// </summary>
-    public class ccButton : ButtonBase
+    public class ccButton : Button
     {
         static ccButton()
         {
