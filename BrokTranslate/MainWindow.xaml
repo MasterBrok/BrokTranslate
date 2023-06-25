@@ -31,7 +31,6 @@
                                       ThisToType="English"
                                       ThisFromType="Persian"/>
             </Grid.Resources>
-
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -93,7 +92,6 @@
                         </cc:ccLabel.Style>
                     </cc:ccLabel>
                 </Grid>
-
                 <Border
                     Grid.Row="2"
                     Height="60"
