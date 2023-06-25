@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BrokTranslate.Repo
 {
-    class MyTranslate
+    public class MyTranslate
     {
         private GoogleApi Api { get; set; }
         private TranslatSetting TranslatSetting { get; set; }

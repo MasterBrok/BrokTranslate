@@ -24,13 +24,28 @@
         BorderBrush="{StaticResource borderBrushMain}"
         Background="{StaticResource backgroundMain}"
         >
-        <Grid>
+        <Grid x:Name="grdMain">
             <Grid.Resources>
                 <co:IConvertTranslate x:Key="TranslateLan"
                                       x:Name="EF"
                                       ThisToType="English"
                                       ThisFromType="Persian"/>
             </Grid.Resources>
+            <StackPanel
+                Orientation="Horizontal"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                >
+
+                <Label
+                    x:Name="lblFromType"
+                    Content="{Binding Source={StaticResource TranslateLan},Path=ThisFromType,Mode=TwoWay}" />
+
+                <Label
+                    x:Name="lblToType"
+                    Content="{Binding Source={StaticResource TranslateLan},Path=ThisToType,Mode=TwoWay}" />
+
+            </StackPanel>
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -43,7 +58,7 @@
                         HorizontalAlignment="Right"
                         CornerRadius="5"
                         Height="20"
-                        Width="20"
+                        Width="20" Click="ccButton_Click"
                         />
                 </StackPanel>
                 <Grid Grid.Row="1">
@@ -72,6 +87,7 @@
                                         </MultiDataTrigger.Conditions>
                                         <Setter Property="Content" Value="{Binding ElementName=txtTranslate,Path=Text,Converter={StaticResource TranslateLan}}"/>
                                     </MultiDataTrigger>
+
                                 </Style.Triggers>
                             </Style>
                         </cc:ccLabel.Style>
@@ -93,14 +109,23 @@
                     <cc:ccButton
                         x:Name="btnTranslate"
                         CornerRadius="20"
+                        Click="btnTranslate_Click"
+                        />
+                    <Label
+                        x:Name="lblCopy"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0 30 0 0"
+                        Foreground="White"
                         >
-                    </cc:ccButton>
+                    </Label>
                 </Grid>
             </Grid>
             <cc:ccButton
+                x:Name="btnChangLan"
+                Click="btnChangLan_Click"
                 PathGeometry="{StaticResource pdChange}"
-                CornerRadius="20"
-                >
+                CornerRadius="20">
             </cc:ccButton>
         </Grid>
     </Border>

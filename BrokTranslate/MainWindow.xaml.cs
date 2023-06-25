@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,12 +35,6 @@ namespace BrokTranslate
 
         }
 
-        private bool isRequest;
-        public bool Request
-        {
-            get { return isRequest; }
-            set { isRequest = value; }
-        }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -47,5 +42,22 @@ namespace BrokTranslate
                 DragMove();
         }
 
+        private void btnTranslate_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(lblResult.Content.ToString());
+            lblCopy.Content = "Copy Content : " + lblResult.Content;
+        }
+
+        private void ccButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnChangLan_Click(object sender, RoutedEventArgs e)
+        {
+            var save = lblFromType.Content;
+            lblFromType.Content = lblToType.Content;
+            lblToType.Content = save;
+        }
     }
 }
